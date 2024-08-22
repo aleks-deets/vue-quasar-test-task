@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -12,7 +12,12 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          <div class="absolute-center">
+            <!-- <q-icon name="accessibility_new" /> -->
+            <!-- <q-icon name="sailing" /> -->
+            <q-icon name="hail" />
+            Test task
+          </div>
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -21,12 +26,14 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
+      class="bg-primary"
       show-if-above
       bordered
     >
       <q-list>
         <q-item-label
           header
+          class="text-white"
         >
           Essential Links
         </q-item-label>
