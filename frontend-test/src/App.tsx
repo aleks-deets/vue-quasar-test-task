@@ -12,12 +12,12 @@ function App() {
     console.log(count);
   };
 
-  const getItem = async () => {
+  const getItemsV1 = async () => {
     const { data } = await axios.get(`${PREFIX}/items`);
     console.log(data);
   };
 
-  const getItems = async () => {
+  const getItemsV2 = async () => {
     try {
       const response = await axios.get(`${PREFIX}/items`);
       console.log(response);
@@ -28,21 +28,19 @@ function App() {
     }
   };
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("http://127.0.0.1:8000/items");
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <>
       <div className="card">
         <h1>Just Test</h1>
-        <button onClick={handleClick}>count is {count}</button>
-        <button onClick={getItems}>get items</button>
+        <p>
+          <button onClick={handleClick}>count is {count}</button>
+        </p>
+        <p>
+          <button onClick={getItemsV1}>get items v1</button>
+        </p>
+        <p>
+          <button onClick={getItemsV2}>get items v2</button>
+        </p>
       </div>
     </>
   );
