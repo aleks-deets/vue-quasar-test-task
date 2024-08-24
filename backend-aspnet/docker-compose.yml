@@ -1,0 +1,12 @@
+services:
+  backend-aspnet:
+    image: ${DOCKER_REGISTRY-}backendaspnet
+    build:
+      context: .
+      dockerfile: backend-aspnet/Dockerfile
+
+  client:
+    image: client
+    build:
+      context: ./../frontend-react
+      dockerfile: Dockerfile
