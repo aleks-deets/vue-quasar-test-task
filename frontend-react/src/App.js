@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 
 const PREFIX_PYTHON = "http://127.0.0.1:8000";
+//const PREFIX_CSHARP = "http://localhost:28521";
 const PREFIX_CSHARP = "http://localhost:5000";
 
 function App() {
@@ -29,6 +30,16 @@ function App() {
     }
   };
 
+  const fetchAll = async () => {
+    const response = await fetch(`${PREFIX_CSHARP}/api/items`);
+    if (!response.ok) {
+      throw new Error("Something went wrong!");
+    }
+    const responseJson = await response.json();
+    console.log(responseJson);
+    // return responseJson;
+  };
+
   return (
     <div className="wrapper">
       <div className="card">
@@ -41,6 +52,9 @@ function App() {
         </p>
         <p>
           <button onClick={getItemsV2}>get items v2</button>
+        </p>
+        <p>
+          <button onClick={fetchAll}>get items Fetch</button>
         </p>
       </div>
     </div>
