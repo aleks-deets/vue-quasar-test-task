@@ -8,5 +8,6 @@ services:
   client:
     image: client
     build:
-      context: ./../frontend-react
+      #context: ./../frontend-react
+      context: ./../frontend-quasar
       dockerfile: Dockerfile

@@ -2,12 +2,17 @@
   <q-page padding>
     <q-table
       flat
-      title="РАЗДЕЛ I. НАЛИЧИЕ АВТОМОБИЛЬНЫХ ТРАНСПОРТНЫХ СРЕДСТВ СПЕЦИАЛЬНОГО НАЗНАЧЕНИЯ"
       :rows="rows"
       :columns="columns"
       row-key="id"
-      class="my-table"
+      class="table"
     >
+      <template v-slot:top>
+      <div class="table__title">
+        <span>РАЗДЕЛ I. </span>
+        <span>НАЛИЧИЕ АВТОМОБИЛЬНЫХ ТРАНСПОРТНЫХ СРЕДСТВ СПЕЦИАЛЬНОГО НАЗНАЧЕНИЯ</span>
+      </div>
+    </template>
     <!-- Кастомный заголовок таблицы -->
       <template v-slot:header="props">
         <q-tr>
@@ -87,7 +92,8 @@ export default {
   methods: {
     async loadData() {
       try {
-        const response = await axios.get('http://localhost:28521/api/random');
+        //const response = await axios.get('http://localhost:28521/api/random');
+        const response = await axios.get('http://localhost:5000/api/random');
         console.log(response.data[0]);
         const data = response.data;
 
@@ -111,7 +117,7 @@ export default {
 </script>
 
 <style scoped>
-.my-table {
+.table {
   width: 100%;
 }
 
@@ -134,5 +140,10 @@ export default {
   white-space: normal;
   overflow-wrap: break-word;
   word-wrap: break-word;
+}
+
+.table__title {
+  /* white-space: pre-wrap;
+  word-break: break-all; */
 }
 </style>
