@@ -13,12 +13,12 @@
         <span>НАЛИЧИЕ АВТОМОБИЛЬНЫХ ТРАНСПОРТНЫХ СРЕДСТВ СПЕЦИАЛЬНОГО НАЗНАЧЕНИЯ</span>
       </div>
     </template>
-    <!-- Кастомный заголовок таблицы -->
+
       <template v-slot:header="props">
         <q-tr>
-          <q-th rowspan="2"  class="header">Наименование показателя</q-th>
-          <q-th rowspan="2"  class="header">Номер строки</q-th>
-          <q-th rowspan="2"  class="header">Наличие на конец года</q-th>
+          <q-th rowspan="2" class="header">Наименование показателя</q-th>
+          <q-th rowspan="2" class="header">Номер строки</q-th>
+          <q-th rowspan="2" class="header">Наличие на конец года</q-th>
           <q-th colspan="4" align="center" class="header">Из них со сроком службы</q-th>
           <q-th rowspan="2" class="header">Поступило <wbr/>в отчётном году</q-th>
           <q-th rowspan="2" class="header">Выбыло <wbr/>(списано) <wbr/>в отчётном году <wbr/>по износу или <wbr/>непригодности</q-th>
@@ -47,11 +47,6 @@
           {{ props.row[props.col.field] || '' }}
         </q-td>
       </template>
-      <!-- <template v-slot:body-cell="props">
-        <q-td :props="props" class="cell-bordered fixed-width" :style="{ width: props.col.style.width }">
-          {{ props.row[props.col.field] }}
-        </q-td>
-      </template> -->
     </q-table>
 
     <q-btn label="Load Data" color="primary" @click="loadData" class="q-mt-md" />
@@ -64,7 +59,6 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      // Колонки таблицы
       columns: [
         { name: 'header11', label: 'header11', field: 'header11', align: 'left' },
         { name: 'header12', label: 'header12', field: 'header12', align: 'left' },
@@ -92,8 +86,8 @@ export default {
   methods: {
     async loadData() {
       try {
-        //const response = await axios.get('http://localhost:28521/api/random');
-        const response = await axios.get('http://localhost:5000/api/random');
+        const response = await axios.get('http://localhost:28521/api/random');
+        //const response = await axios.get('http://localhost:5000/api/random');
         console.log(response.data[0]);
         const data = response.data;
 
@@ -125,9 +119,6 @@ export default {
   background-color: #cdffcc;
   /* color: white; */
   border: 1px solid black;
-  /* max-width: 20px;
-  width: 20px;
-  text-align: center; */
   white-space: pre-wrap;
 }
 
@@ -140,10 +131,5 @@ export default {
   white-space: normal;
   overflow-wrap: break-word;
   word-wrap: break-word;
-}
-
-.table__title {
-  /* white-space: pre-wrap;
-  word-break: break-all; */
 }
 </style>

@@ -30,14 +30,6 @@ namespace backend_aspnet
                 });
             });
 
-            /*
-            services.AddCors(options => options.AddPolicy("CorsPolicy",
-                builder =>
-                {
-                    builder.WithOrigins("http://localhost:3000/");
-                }));
-            */
-
             services.AddRazorPages();
         }
 
@@ -58,9 +50,6 @@ namespace backend_aspnet
             app.UseRouting();
 
             app.UseCors();
-            /*
-            app.UseCors("CorsPolicy");
-            */
 
             app.UseAuthorization();
 

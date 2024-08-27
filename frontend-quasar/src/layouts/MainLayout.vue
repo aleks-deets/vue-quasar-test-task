@@ -65,7 +65,7 @@ const navLinks = [
     title: 'Task',
     caption: 'Vue 3 + Quasar + Axios + Docker',
     icon: 'school',
-    link: '/test'
+    link: '/'
   },
 ]
 
