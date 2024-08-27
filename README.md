@@ -15,11 +15,11 @@
 
 ## Screenshots
 
-![screen-1](public/screens/screen01.PNG)
+![screen-1](frontend-quasar/public/screens/screen01.PNG)
 
 after clicking "Load data" button:
 
-![screen-2](public/screens/screen02.PNG)
+![screen-2](frontend-quasar/public/screens/screen02.PNG)
 
 ---
 
